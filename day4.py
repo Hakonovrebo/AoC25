@@ -2,6 +2,25 @@
 #lese inn 2d array
 #finne størrelse på array for å sette begrensinger
 #ittterere gjennom og sjekke alle naboer. 
+def has_nabors(x, y):
+    """
+    -1,-1 0,-1 +1,-1
+    -1,0   x   +1,0
+    +1,-1 +1,0 +1,+1 
+    """
+    naburs = 0
+    for dx in range(-1, 2):
+        for dy in range(-1, 2):
+            if dx == 0 and dy == 0:
+                continue
+            nx = x + dx
+            ny = y + dy
+            if 0 <= nx < len_x and 0 <= ny < len_y:
+                if paperstorage[ny][nx]:
+                    naburs += 1
+
+    return True if naburs < 4 else False 
+
 paperstorage = []
 for line in input_lines:
     line = line.strip()
