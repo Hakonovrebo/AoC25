@@ -22,6 +22,7 @@ def has_nabors(x, y):
     return True if naburs < 4 else False 
 
 paperstorage = []
+input_lines = open("input_4.txt", "r")
 for line in input_lines:
     line = line.strip()
     if not line:
